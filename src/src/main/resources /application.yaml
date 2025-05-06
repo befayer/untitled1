@@ -1,0 +1,53 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: user
+    password: password
+
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    from: no-reply@fladx.ru
+    host: localhost
+    port: 3025
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+
+security:
+  jwt:
+    secret: Y3VwZXItc2VjcmV0LXByaXphZnplZHItdmVyeS1sb25nLXNlY3JldA==
+    expirationMs: 3600000000
+
+logging:
+  level:
+    root: info
+
+server:
+  port: 8080
+
+otp:
+  check-expired-delay-ms: 100000
+
+telegram:
+  bot:
+    token: YOUR_TELEGRAM_BOT_TOKEN
+
+smpp:
+  host: localhost
+  port: 2775
+  system_id: smppclient1
+  password: password
+  system_type: OTP
+  source_addr: OTPService

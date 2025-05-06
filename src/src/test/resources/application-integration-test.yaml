@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/otp_test
+    username: test_user
+    password: test_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate  # Не создает автоматически таблицы!
+
+testcontainers:
+  enabled: true
